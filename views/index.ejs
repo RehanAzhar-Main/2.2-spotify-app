@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <header id="navbar">
+        <h1 class="logo">Spotify</h1>
+        <ul class="nav">
+            <li class="navlink"><a href="#">Home</a></li>
+            <li class="navlink"><a href="#">Library</a></li>
+            <li class="navlink"><a href="#">Popular</a></li>
+            <li class="navlink"><a href="#">Account</a></li>
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="flex">
+        <div class="playlist">
+            <div class="flex space-between">
+                <h2>Playlist</h2>
+                <a href="/add-song" class="add-icon"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></a>
+            </div>
+
+            <div>
+                <ul class="song-list">
+                    <% playlist.forEach(song => { %>
+                        <li>
+                            <%= song.title %> -
+                                <%= song.artist %>
+                        </li>
+                        <% }) %>
+                </ul>
+            </div>
+        </div>
+
+        <div class="now-playing">
+            <h2 class="sub-title">Now Playing</h2>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title">happy</p>
+                        <p>
+                            <%= playedSong.title %>
+                        </p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">
+                            <%= playedSong.artist %>
+                        </p>
+                        <button class="btn-primary">remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="most-played">
+            <h2 class="sub-title">Most Played Song</h2>
+            <div id="most-played"></div>
+            <div class="flex-centered">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="title">happy</p>
+                            <p>Skinnyfabs</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="title">Played 1000 times</p>
+                            <button class="btn-primary">remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="title">ghost</p>
+                            <p>Skinnyfabs</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="title">Played 1000 times</p>
+                            <button class="btn-primary">remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="title">somewhere only we know</p>
+                            <p>rhianne</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="title">Played 1000 times</p>
+                            <button class="btn-primary">remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
